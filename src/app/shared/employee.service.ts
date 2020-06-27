@@ -13,9 +13,7 @@ export class EmployeeService {
   httpClient: any;
   url: string;
 
-  
-  constructor(private http : HttpClient) {
-  }
+  constructor(private http : HttpClient) {}
 
   postEmployee(formData : Employee){
    return this.http.post(this.rootURL+'/create',formData); 
