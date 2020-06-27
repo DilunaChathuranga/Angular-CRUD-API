@@ -10,7 +10,6 @@ import { Employee } from 'src/app/shared/employee.model';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-  //list1 : any[];
   posts:any;
   constructor(private service: EmployeeService,
     private toastr: ToastrService) { }
@@ -39,21 +38,10 @@ export class EmployeeComponent implements OnInit {
 
   insertRecord(form: NgForm) {
     this.service.postEmployee(form.value).subscribe(res => {
-      // this.service.list.push(form.value);
-      //form['id']=res;
       console.log(res);
       console.log(this.service.list);
 
-      //form.valid.id=res;
-      //this.post=res;
-      //console.log(this.service.formData);
-      // this.service.list['id']=res;
-      //let val={name:form.value};
       //this.service.list.slice(0,0,this.post);
-
-    //this.posts=res;
-    //console.log(this.posts);
-    //this.service.list.push(this.posts);
 
       this.toastr.success('Inserted successfully', 'EMP. Register');
       this.resetForm(form);
